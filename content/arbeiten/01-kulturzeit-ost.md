@@ -1,5 +1,5 @@
 ---
-title: Kulturzeit Ost
+title: Kulturzeit West
 sender: MDR
 jahr: 2026
 format: TV-Magazin
