@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+<defs><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .18 0"/></filter>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfcac2"/><stop offset="1" stop-color="#9c968d"/></linearGradient></defs>
+<rect width="800" height="1000" fill="url(#g)"/>
+<ellipse cx="400" cy="390" rx="130" ry="160" fill="#58534d"/>
+<path d="M150 1000 C170 760 280 640 400 640 C520 640 630 760 650 1000Z" fill="#3f3b37"/>
+<path d="M262 380 C250 220 330 170 410 172 C520 176 560 260 540 420 C600 520 590 620 560 700 L500 610 C540 500 520 380 470 300 C420 340 330 330 290 300 C270 360 280 470 300 610 L240 700 C200 600 220 480 262 380Z" fill="#2c2926"/>
+<rect width="800" height="1000" filter="url(#n)"/>
+<text x="40" y="960" font-family="monospace" font-size="22" fill="#2c2926">PLATZHALTER · PRESSEFOTO 4:5</text>
+</svg>

@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ partial "header.html" . }}
+<main id="inhalt" class="wrap ov">
+  <h1 class="display ov-title">Farben</h1>
+  <p class="lead">Lautere, jüngere Vorschläge. Darunter zum Vergleich die ruhigere Runde für das Layout Sendeplan. Jede Karte zeigt Name, Laufband, eine Zeile aus den Arbeiten und den Kontaktblock in den echten Farben.</p>
+  <div class="fv-grid">
+    {{ range hugo.Data.paletten }}
+    <article class="fv" data-palette="{{ .id }}">
+      <p class="fv-name">Sophia<br>Hörhold</p>
+      <div class="ticker"><div class="ticker-track"><span>Moderatorin<i>/</i>Journalistin<i>/</i>Host<i>/</i></span><span>Moderatorin<i>/</i>Journalistin<i>/</i>Host<i>/</i></span></div></div>
+      <div class="fv-body">
+        <h3>{{ .name }}</h3>
+        <div class="chips">{{ range .farben }}<span style="background:{{ . | safeCSS }}" title="{{ . }}"></span>{{ end }}</div>
+        <p class="fv-hex">{{ delimit .farben "  " }}</p>
+        <p>{{ .text }}</p>
+        <div class="fv-row"><span>2026</span><b>Wem gehört die Stadt?</b><span>Moderation</span></div>
+        <p>Ich moderiere Gespräche, <mark>die sonst niemand führen will.</mark></p>
+      </div>
+      <div class="fv-foot">hallo@sophiahoerhold.de<br><a href="/?p={{ .id }}">Auf der Seite ansehen</a></div>
+    </article>
+    {{ end }}
+  </div>
+</main>
+{{ partial "footer.html" . }}
+{{ end }}

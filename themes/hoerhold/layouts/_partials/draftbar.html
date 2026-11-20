@@ -1,0 +1,28 @@
+<aside class="draftbar" aria-label="Farbvorschläge">
+  <a href="/farben/">Farben</a>
+  <span class="draftbar-group">
+    {{ range hugo.Data.paletten }}<button type="button" data-set-palette="{{ .id }}">{{ .name }}</button>{{ end }}
+  </span>
+</aside>
+<script>
+(function () {
+  var root = document.documentElement;
+  function sync() {
+    var p = root.dataset.palette;
+    document.querySelectorAll("[data-set-palette]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.setPalette === p); });
+    // Gewähltes Schema auf allen internen Links mitnehmen
+    document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+      if (a.closest(".fv")) return;
+      var u = new URL(a.href); u.searchParams.set("p", p); a.href = u.toString();
+    });
+  }
+  document.querySelectorAll("[data-set-palette]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      root.dataset.palette = b.dataset.setPalette;
+      var u = new URL(location.href); u.searchParams.set("p", b.dataset.setPalette); history.replaceState(null, "", u);
+      sync();
+    });
+  });
+  sync();
+})();
+</script>

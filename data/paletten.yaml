@@ -1,0 +1,45 @@
+# Farbvorschläge für die Entwurfsleiste und die Seite /farben/
+- id: tannetomate
+  name: Tanne & Tomate
+  farben: ["#f3eee4", "#1d4433", "#ee6446", "#13261d"]
+  text: Tannengrün für den Namen, Tomatenrot für Laufband, Markierungen und den ganzen Kontaktblock. Frisch und laut, mit Tiefe.
+- id: navymandarine
+  name: Navy & Mandarine
+  farben: ["#f5efe7", "#1a2550", "#f28b30", "#f6a457"]
+  text: Navy-Name, Mandarinen-Laufband, Kontaktblock navy mit orangefarbener E-Mail. Sportlich und dynamisch, wie ein junges Sendeformat.
+- id: beeresenf
+  name: Beere & Senf
+  farben: ["#f7eee6", "#7a1747", "#e7b134", "#2a0a1c"]
+  text: Der Bordeaux-Stimmung am nächsten, aber jünger. Tiefe Beere für den Namen, Senfgelb als Laufband und Markierung.
+- id: petrolpink
+  name: Petrol & Pink
+  farben: ["#f5eee8", "#0e4a4c", "#f29a9a", "#0b2627"]
+  text: Dunkles Petrol mit einem warmen Pink fürs Laufband und den Kontaktblock. Pop, aber erwachsen.
+- id: ziegelhimmel
+  name: Ziegel & Himmel
+  farben: ["#f6f0e8", "#b23a1f", "#9cc3e6", "#1e1612"]
+  text: Ziegelroter Name, hellblaues Laufband, roter Kontaktblock. Wirkt wie ein Plakat, freundlich und energisch.
+- id: tanne
+  name: Tanne & Messing (ruhig)
+  farben: ["#f2ede3", "#1f4a37", "#e2c37a", "#16261f"]
+  text: Tiefes Tannengrün für Name, Laufband und Kontakt, dazu Messing als Begleitton. Satt und edel wie Bordeaux, aber kühler im Kern.
+- id: cognac
+  name: Cognac (ruhig)
+  farben: ["#f5ece2", "#8a3b12", "#2b1a12", "#f0c9a0"]
+  text: Cognac und Espresso, Kontaktblock dunkel mit Aprikose. Warm wie Leder und Holz, sehr einladend.
+- id: nacht
+  name: Nachtblau & Kupfer (ruhig)
+  farben: ["#f3eee8", "#1c2a4a", "#e7b48e"]
+  text: Tiefes Nachtblau mit Kupfer im Laufband. Abendprogramm, Hauptsendezeit, seriös und trotzdem warm.
+- id: schoko
+  name: Schokolade & Rosé (ruhig)
+  farben: ["#f5e9e4", "#4a2a20", "#eab9ab", "#2a1712"]
+  text: Bitterschokolade mit zartem Rosé. Am nächsten an der Bordeaux-Stimmung, nur erdiger.
+- id: pinie
+  name: Petrol & Aprikose (ruhig)
+  farben: ["#f4ede4", "#0f4446", "#f2b98f", "#10282a"]
+  text: Dunkles Petrol, im Kontaktblock eine Aprikose-E-Mail. Klar und souverän, mit einem warmen Kontrapunkt.
+- id: bordeaux
+  name: Bordeaux (bisher)
+  farben: ["#f3e9e2", "#33161d", "#7a2335", "#ecc6c0"]
+  text: Zum Vergleich, das aktuelle Schema.

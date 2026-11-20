@@ -1,0 +1,7 @@
+{{/* Laufband mit Rollen. Wird bei reduzierter Bewegung angehalten. */}}
+{{ $items := slice }}{{ range site.Params.roles }}{{ $items = $items | append . }}{{ end }}{{ $items = $items | append site.Params.city }}
+<div class="ticker" aria-label="{{ delimit $items ", " }}">
+  <div class="ticker-track" aria-hidden="true">
+    {{ range seq 4 }}<span>{{ range $items }}{{ . }}<i>/</i>{{ end }}</span>{{ end }}
+  </div>
+</div>

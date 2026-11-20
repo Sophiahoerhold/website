@@ -1,0 +1,43 @@
+{{/* Layout A: Sendeplan. Startseite als Programmübersicht. */}}
+{{ $arbeiten := (where site.RegularPages "Section" "arbeiten").ByWeight }}
+<div class="sp-top">
+{{ partial "header.html" . }}
+  <section class="sp-hero wrap">
+    <h1 class="sp-name">{{ range split site.Params.name " " }}<span>{{ . }}</span>{{ end }}</h1>
+  </section>
+  {{ partial "ticker.html" . }}
+</div>
+<main id="inhalt">
+
+  <section class="sp-intro wrap" id="ueber">
+    {{ partial "portrait.html" (dict "page" . "class" "sp-portrait") }}
+    <div class="sp-intro-text">
+      <p class="lead">{{ .Params.intro }}</p>
+      <div class="prose columns">{{ .Content }}</div>
+    </div>
+  </section>
+
+  <section class="wrap block" id="arbeiten">
+    <h2 class="label">{{ .Params.ueberschriften.arbeiten }} <span>{{ len $arbeiten }} Einträge</span></h2>
+    {{ partial "programm.html" $arbeiten }}
+  </section>
+
+  {{ if site.Params.showTermine }}
+  <section class="wrap block split" id="termine">
+    <h2 class="label">{{ .Params.ueberschriften.termine }}</h2>
+    {{ partial "termine.html" . }}
+  </section>
+  {{ end }}
+
+  <section class="wrap block split">
+    <h2 class="label">{{ .Params.ueberschriften.kunden }}</h2>
+    {{ partial "kunden.html" . }}
+  </section>
+
+  <section class="wrap block split">
+    <h2 class="label">{{ .Params.ueberschriften.stimmen }}</h2>
+    {{ partial "stimmen.html" . }}
+  </section>
+</main>
+{{ partial "kontakt.html" . }}
+{{ partial "footer.html" . }}

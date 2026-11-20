@@ -1,0 +1,11 @@
+<section id="kontakt" class="kontakt">
+  <div class="wrap">
+    <h2 class="label">{{ site.Params.kontaktTitel }}</h2>
+    <a class="mail" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+    <div class="kontakt-meta">
+      <p>{{ site.Params.kontaktText | markdownify }}</p>
+      <p>{{ site.Params.booking }}</p>
+      <p><a href="{{ site.Params.instagram }}">Instagram ↗</a><br><a href="{{ site.Params.linkedin }}">LinkedIn ↗</a></p>
+    </div>
+  </div>
+</section>

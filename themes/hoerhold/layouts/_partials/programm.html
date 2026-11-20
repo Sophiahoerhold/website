@@ -1,0 +1,18 @@
+{{/* Liste der Arbeiten. Mit "link" geht der Eintrag nach außen, sonst auf die Seite seiner Kategorie. */}}
+<ol class="programm">
+  {{ range . }}
+  {{ $extern := .Params.link }}
+  {{ $ziel := "" }}
+  {{ with .GetTerms "kategorien" }}{{ $ziel = (index . 0).RelPermalink }}{{ end }}
+  <li>
+    <a class="p-row" href="{{ $extern | default $ziel }}"{{ if $extern }} target="_blank" rel="noopener"{{ end }}>
+      <span class="p-jahr">{{ .Params.jahr }}</span>
+      <span class="p-titel">{{ .Title }}<span class="p-ziel">{{ if $extern }}↗{{ else }}→{{ end }}</span></span>
+      <span class="p-sender">{{ .Params.sender }}</span>
+      <span class="p-format">{{ .Params.format }}</span>
+      <span class="p-rolle">{{ .Params.rolle }}</span>
+      <span class="p-bild duo"><img src="{{ .Params.bild }}" alt="" loading="lazy" width="1600" height="900"></span>
+    </a>
+  </li>
+  {{ end }}
+</ol>

@@ -1,0 +1,53 @@
+{{/* Layout C: Bühne. Großes Porträt, Arbeiten als Bildstrecke. */}}
+{{ $arbeiten := (where site.RegularPages "Section" "arbeiten").ByWeight }}
+{{ partial "header.html" . }}
+<main id="inhalt">
+  <section class="bn-hero">
+    <div class="bn-photo duo"><img src="{{ .Params.portrait }}" alt="Porträt von {{ site.Params.name }}" width="800" height="1000"></div>
+    <div class="bn-hero-text wrap">
+      <h1 class="bn-name">Sophia<br>Hörhold</h1>
+      <p class="bn-roles">{{ delimit site.Params.roles ", " " und " }}<br>{{ site.Params.city }}</p>
+    </div>
+  </section>
+  {{ partial "ticker.html" . }}
+
+  <section class="wrap block bn-about" id="ueber">
+    <p class="lead">{{ .Params.intro }}</p>
+    <div class="prose">{{ .Content }}</div>
+  </section>
+
+  <section class="wrap block" id="arbeiten">
+    <h2 class="label">Arbeiten</h2>
+    <div class="bn-works">
+      {{ range $i, $p := $arbeiten }}
+      <article class="bn-work">
+        <div class="duo"><img src="{{ .Params.bild }}" alt="" loading="lazy" width="1600" height="900"></div>
+        <div class="bn-work-meta">
+          <span class="bn-num">{{ printf "%02d" (add $i 1) }}</span>
+          <h3>{{ .Title }} <span>({{ .Params.sender }}) {{ .Params.jahr }}</span></h3>
+          <p class="bn-rolle">{{ lower .Params.rolle }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="bn-band">
+    <div class="wrap">
+      <h2 class="label">Gearbeitet für</h2>
+      {{ partial "kunden.html" . }}
+    </div>
+  </section>
+
+  <section class="wrap block split" id="termine">
+    <h2 class="label">Demnächst</h2>
+    {{ partial "termine.html" . }}
+  </section>
+
+  <section class="wrap block split">
+    <h2 class="label">Stimmen</h2>
+    {{ partial "stimmen.html" . }}
+  </section>
+</main>
+{{ partial "kontakt.html" . }}
+{{ partial "footer.html" . }}

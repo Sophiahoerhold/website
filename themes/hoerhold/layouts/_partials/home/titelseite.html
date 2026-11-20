@@ -1,0 +1,54 @@
+{{/* Layout B: Titelseite. Startseite als Zeitungsfront. */}}
+{{ $arbeiten := (where site.RegularPages "Section" "arbeiten").ByWeight }}
+{{ $monate := slice "Januar" "Februar" "März" "April" "Mai" "Juni" "Juli" "August" "September" "Oktober" "November" "Dezember" }}
+{{ $tage := slice "Sonntag" "Montag" "Dienstag" "Mittwoch" "Donnerstag" "Freitag" "Samstag" }}
+<header class="ts-mast wrap">
+  <div class="ts-dateline">
+    <span>{{ site.Params.city }}</span>
+    <span>{{ index $tage (int now.Weekday) }}, {{ now.Day }}. {{ index $monate (sub now.Month 1) }} {{ now.Year }}</span>
+    <span>{{ delimit site.Params.roles " · " }}</span>
+  </div>
+  <a class="ts-title" href="/">Sophia Hörhold</a>
+  <nav class="ts-nav" aria-label="Hauptnavigation">
+    {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+  </nav>
+</header>
+
+<main id="inhalt" class="wrap">
+  <section class="ts-front" id="ueber">
+    <article class="ts-lead">
+      <p class="kicker">Porträt</p>
+      <h1 class="ts-headline">{{ .Params.intro }}</h1>
+      {{ partial "portrait.html" (dict "page" . "class" "ts-portrait") }}
+      <div class="prose columns">{{ .Content }}</div>
+    </article>
+    <aside class="ts-side" id="termine">
+      <h2 class="label">Termine</h2>
+      {{ partial "termine.html" . }}
+      <h2 class="label">Gearbeitet für</h2>
+      {{ partial "kunden.html" . }}
+    </aside>
+  </section>
+
+  <section class="ts-ressort" id="arbeiten">
+    <h2 class="ts-ressort-title">Arbeiten</h2>
+    <div class="ts-teaser-grid">
+      {{ range $i, $p := $arbeiten }}
+      <article class="ts-teaser {{ if eq $i 0 }}is-first{{ end }}">
+        <div class="duo"><img src="{{ .Params.bild }}" alt="" loading="lazy" width="1600" height="900"></div>
+        <p class="kicker">{{ .Params.sender }} · {{ .Params.jahr }}</p>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Plain | truncate 140 }}</p>
+        <p class="ts-rolle">{{ .Params.rolle }}, {{ .Params.format }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="ts-ressort">
+    <h2 class="ts-ressort-title">Stimmen</h2>
+    {{ partial "stimmen.html" . }}
+  </section>
+</main>
+{{ partial "kontakt.html" . }}
+{{ partial "footer.html" . }}

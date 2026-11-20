@@ -1,0 +1,8 @@
+<div class="stimmen">
+  {{ range hugo.Data.stimmen }}
+  <blockquote>
+    <p>{{ .text }}</p>
+    <footer>{{ .wer }}, {{ .funktion }}</footer>
+  </blockquote>
+  {{ end }}
+</div>

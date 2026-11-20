@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .2 0"/></filter></defs>
+<rect width="1600" height="900" fill="#a9b1ad #4f5854 Podium"/>
+<rect x="0" y="560" width="1600" height="340" fill="" opacity=".55"/>
+<circle cx="600" cy="400" r="110" fill=""/>
+<path d="M420 900 C440 640 510 540 600 540 C690 540 760 640 780 900Z" fill=""/>
+<rect x="1060" y="300" width="300" height="420" fill="" opacity=".4"/>
+<rect width="1600" height="900" filter="url(#n)"/>
+<text x="48" y="850" font-family="monospace" font-size="30" fill="#1d1b19">PLATZHALTER · STILL 16:9 · </text>
+</svg>

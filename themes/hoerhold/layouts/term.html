@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="sp-top">
+{{ partial "header.html" . }}
+  <section class="wrap kat-head">
+    <h1 class="display">{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+    <nav class="kat-nav" aria-label="Kategorien">
+      {{ $aktuell := . }}
+      {{ range (where site.Pages "Kind" "term").ByWeight }}
+      <a href="{{ .RelPermalink }}" {{ if eq . $aktuell }}aria-current="page"{{ end }}>{{ .Title }} ({{ len .Pages }})</a>
+      {{ end }}
+      <a href="/#arbeiten">Alle Arbeiten</a>
+    </nav>
+  </section>
+</div>
+<main id="inhalt">
+  {{ with .Content }}<section class="wrap block"><div class="prose columns">{{ . }}</div></section>{{ end }}
+  <section class="wrap block">
+    <h2 class="label">{{ .Title }} <span>{{ len .Pages }} Einträge</span></h2>
+    {{ partial "programm.html" .Pages.ByWeight }}
+  </section>
+</main>
+{{ partial "kontakt.html" . }}
+{{ partial "footer.html" . }}
+{{ end }}

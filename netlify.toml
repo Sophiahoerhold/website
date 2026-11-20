@@ -1,0 +1,21 @@
+# Build settings for Netlify. Netlify reads this file automatically.
+[build]
+  publish = "public"
+  # $URL is the site's address on Netlify (or your own domain once connected)
+  command = "hugo --gc --minify --baseURL $URL"
+
+[build.environment]
+  HUGO_VERSION = "0.170.1"
+
+# Preview builds for branches and pull requests use their own address
+[context.deploy-preview]
+  command = "hugo --gc --minify --baseURL $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify --baseURL $DEPLOY_PRIME_URL"
+
+# Fonts and images rarely change, let browsers cache them
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,103 @@
+{{ define "bodyclass" }}layout-uebersicht{{ end }}
+{{ define "main" }}
+{{ $refs := slice
+  (dict "name" "annikadonprigge.com" "sys" "Squarespace" "font" "Halyard Display (Grotesk), alles in einer Schrift" "farbe" (slice "#d9bfff" "#1a00ff" "#0306fc") "notiz" "Einfarbig: elektrisches Blau auf Flieder, auch der Text. Rollen als Laufband in Versalien. Projekte als fetter Titel mit Sender und Jahr, darunter die Rolle klein geschrieben. Auftraggeber als reine Textliste statt Logowand. Fotocredits sichtbar.")
+  (dict "name" "louigiklassen.com" "sys" "Wix" "font" "Helvetica Bold für Headlines (96/64/40 px), DIN Next Light für Text" "farbe" (slice "#014235" "#f9c5b4" "#f3a78f" "#9e3b1b") "notiz" "Tiefes Waldgrün mit Pfirsich und Rost. Große, enge Grotesk-Headlines gegen leichte Fließtexte. Drei Schritte, Angebote, Referenzen, Stimmen, Newsletter.")
+  (dict "name" "miaheresch.de" "sys" "Webflow" "font" "Eighties Comeback (Display-Serif), Sweet Sans Pro, Karla" "farbe" (slice "#fafafa" "#dec0c6" "#5d6c7b") "notiz" "Fast weiß mit gedecktem Rosé. Charakterstarke Display-Serif für Headlines, nüchterne Sans für Labels. Logo-Laufband, Hörproben, Showreel, Themen, Podcast.")
+  (dict "name" "sachsentrance.com" "sys" "TYPO3 + Vite" "font" "Pixellari, Bruno Ace, Audiowide, Monda" "farbe" (slice "#e8ff00" "#7805fa" "#2a1b6b" "#fdfaf1") "notiz" "Laut: Säuregelb gegen Violett, Pixel- und Techno-Schriften. Interessant ist die Disziplin dahinter: ein warmes Off-White (#fdfaf1) als Grund, Akzentfarbe nur punktuell. Termine mit Countdown.")
+  (dict "name" "brainy-concepts.com" "sys" "Nicepage" "font" "Bebas Neue (Versalien, schmal), Montserrat" "farbe" (slice "#0a0708" "#ffffff" "#fffd37") "notiz" "Fast-Schwarz, Weiß und ein einziges Textmarker-Gelb. Schmale Versalien-Headlines, verspielte Sprache. Einseiter mit Ankernavigation.")
+  (dict "name" "juliakuttner.de" "sys" "Wix" "font" "Caudex und Forum (Serifen), DIN Next Light" "farbe" (slice "#f4efeb" "#e8dcd5" "#574f4b" "#182226") "notiz" "Ruhige Sand- und Taupetöne, Serifen-Headlines, viel Weißraum. Nummerierte Abläufe, ein Motto (Ruhig. Klar. Präzise.). Seriös statt laut.")
+}}
+{{ $palettes := slice
+  (dict "id" "papier" "name" "Papier" "herkunft" "nach Annika Don Prigge" "farben" (slice "#f2eee6" "#1c1cb8" "#e6e0d3") "text" "Eine einzige Druckfarbe: Ultramarin auf warmem Papier. Alles, auch Fotos (Duoton), läuft über diese eine Farbe. Wirkt wie ein Plakat oder Programmheft, sehr eigenständig.")
+  (dict "id" "gruen" "name" "Grün" "herkunft" "nach Louigi Klassen" "farben" (slice "#f5efe6" "#0f3b2e" "#f2a98c" "#a3401c") "text" "Waldgrün als Textfarbe und für dunkle Flächen, Pfirsich als Wärme. Erwachsen, ruhig, weniger Medien-Klischee als Blau oder Rot.")
+  (dict "id" "signal" "name" "Signal" "herkunft" "nach Sachsentrance und Brainy Concepts" "farben" (slice "#faf8f2" "#111111" "#e4ff1a") "text" "Schwarz auf Off-White, dazu ein Säuregelb, das nur als Textmarker hinter Wörtern und als Kontaktfläche auftaucht. Nachrichtig, direkt, mit einem Funken.")
+  (dict "id" "sand" "name" "Sand" "herkunft" "nach Julia Kuttner und Mia Heresch" "farben" (slice "#f3eee9" "#22201e" "#e6dbd2" "#b4472a") "text" "Sand, Taupe und fast Schwarz, Terrakotta als einziger Akzent. Die leiseste Variante, gut für Kultur, Literatur und Fachtagungen.")
+}}
+{{ $layouts := slice
+  (dict "id" "sendeplan" "name" "A · Sendeplan" "text" "Der Name füllt die ganze Breite in schmalen Versalien, darunter ein Laufband mit den Rollen. Die Arbeiten stehen als Programmliste da: Jahr, Titel, Sender, Format, Rolle. Beim Überfahren erscheint das Standbild. Termine wie ein Sendeplan. Kontakt als riesige E-Mail-Adresse.")
+  (dict "id" "titelseite" "name" "B · Titelseite" "text" "Die Startseite als Zeitungsfront: Datumszeile, Name als Zeitungskopf in der Serife, Aufmacher mit Porträt und Bio im Spaltensatz, Termine und Auftraggeber in der Randspalte. Arbeiten als Teaser mit Dachzeile. Passt zum journalistischen Profil.")
+  (dict "id" "buehne" "name" "C · Bühne" "text" "Großes Porträt neben dem Namen in breiter Grotesk. Die Arbeiten als große, nummerierte Bildstrecke (Titel, Sender, Jahr, Rolle klein), angelehnt an Annika Don Prigge. Auftraggeber als farbiges Band. Am stärksten bildgetrieben, braucht gute Pressefotos.")
+}}
+<header class="site-header wrap">
+  <a class="site-name" href="/">{{ site.Params.name }}</a>
+  <nav aria-label="Abschnitte"><ul><li><a href="#analyse">1 Analyse</a></li><li><a href="#farben">2 Farben</a></li><li><a href="#layouts">3 Layouts</a></li></ul></nav>
+</header>
+<main id="inhalt" class="wrap ov">
+  <h1 class="display ov-title">Entwürfe</h1>
+  <p class="lead">Portfolio für Sophia Hörhold, Moderatorin und Journalistin. Drei Schritte: Analyse der Referenzen, Vorschläge für Farbschemata, Vorschläge für Layouts. Jede Kombination ist unten verlinkt und über die Leiste am unteren Rand umschaltbar.</p>
+
+  <section class="block" id="analyse">
+    <h2 class="label">1 · Analyse der Referenzen</h2>
+    <div class="ov-refs">
+      {{ range $refs }}
+      <article>
+        <h3>{{ .name }} <span>{{ .sys }}</span></h3>
+        <div class="chips">{{ range .farbe }}<span style="background:{{ . | safeCSS }}" title="{{ . }}"></span>{{ end }}</div>
+        <p class="ov-font">{{ .font }}</p>
+        <p>{{ .notiz }}</p>
+      </article>
+      {{ end }}
+    </div>
+
+    <h3 class="ov-sub">Was die Referenzen verbindet</h3>
+    <ul class="ov-list">
+      <li><strong>Eine Hauptfarbe, nicht fünf.</strong> Fast alle arbeiten mit einem warmen Off-White oder einer Flächenfarbe plus genau einem Akzent.</li>
+      <li><strong>Typografischer Kontrast.</strong> Schwere oder schmale Display-Schrift gegen ruhigen Lesetext (Helvetica Bold / DIN Light, Bebas / Montserrat, Caudex / DIN).</li>
+      <li><strong>Rollen als Statement.</strong> „Moderatorin, Kuratorin &amp; Speakerin“ steht prominent, oft als Laufband.</li>
+      <li><strong>Referenzen als Text.</strong> Sender, Jahr und Rolle direkt am Projekt. Auftraggeber eher als Liste als als Logo-Karussell.</li>
+      <li><strong>Kontakt doppelt.</strong> Einmal oben, einmal groß am Ende. Termine und Hörproben als lebendige Inhalte.</li>
+    </ul>
+
+    <h3 class="ov-sub">Was als „vibe coded“ wahrgenommen wird, und hier bewusst fehlt</h3>
+    <ul class="ov-list ov-avoid">
+      <li>Lila oder Indigo-Verläufe, Verlaufstext in Headlines, leuchtende Blobs hinter dem Hero</li>
+      <li>Inter (oder Roboto, system-ui) für alles</li>
+      <li>Glassmorphism, weich verschattete Karten mit großen Eckradien</li>
+      <li>Drei Feature-Karten mit Icon oben, Emojis als Icons</li>
+      <li>Farbige linke Rahmen an Karten und Zitaten</li>
+      <li>Versalien-Pill-Badge über der Hero-Headline, zentrierter Hero mit zwei Buttons</li>
+      <li>Dunkler Modus mit Neon-Glow, Fade-in-Animation an jedem Abschnitt</li>
+      <li>Floskel-Copy und Gedankenstriche im Dauereinsatz</li>
+    </ul>
+    <p class="ov-note">Stattdessen: Archivo (variable Breite) und Newsreader, eckige Kanten, Linien statt Schatten, Duoton-Fotos, echte Inhaltsstruktur aus dem Journalismus (Programmliste, Dachzeile, Spaltensatz). Schriften liegen lokal, kein Google-Fonts-Abruf (DSGVO).</p>
+    <p class="ov-sources">Quellen: <a href="https://www.thefountaininstitute.com/blog/signs-vibe-coded-ui">Fountain Institute</a>, <a href="https://adriankrebs.ch/blog/design-slop/">Adrian Krebs</a>, <a href="https://dev.to/alanwest/why-every-ai-built-website-looks-the-same-blame-tailwinds-indigo-500-3h2p">DEV</a>, <a href="https://www.925studios.co/blog/ai-slop-web-design-guide">925 Studios</a></p>
+  </section>
+
+  <section class="block" id="farben">
+    <h2 class="label">2 · Farbschemata</h2>
+    <div class="ov-palettes">
+      {{ range $palettes }}
+      <article class="ov-palette" data-palette="{{ .id }}">
+        <div class="ov-specimen">
+          <p class="ov-spec-name">Sophia<br>Hörhold</p>
+          <p class="ov-spec-text">Moderiert Gespräche, <mark>die sonst niemand führt.</mark></p>
+        </div>
+        <div class="ov-palette-info">
+          <h3>{{ .name }} <span>{{ .herkunft }}</span></h3>
+          <div class="chips">{{ range .farben }}<span style="background:{{ . | safeCSS }}" title="{{ . }}"></span>{{ end }}</div>
+          <p class="ov-hex">{{ delimit .farben "  " }}</p>
+          <p>{{ .text }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="block" id="layouts">
+    <h2 class="label">3 · Layouts</h2>
+    <div class="ov-layouts">
+      {{ range $layouts }}
+      {{ $l := . }}
+      <article class="ov-layout">
+        <div class="wire wire-{{ .id }}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h3>{{ .name }}</h3>
+        <p>{{ .text }}</p>
+        <p class="ov-links">{{ range $palettes }}<a href="/entwuerfe/{{ $l.id }}/?p={{ .id }}">{{ .name }}</a>{{ end }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+</main>
+{{ partial "footer.html" . }}
+{{ end }}

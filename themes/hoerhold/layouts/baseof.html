@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}" data-palette="{{ .Params.palette | default site.Params.palette }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}, {{ delimit site.Params.roles " und " }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.name }}, {{ delimit site.Params.roles ", " }}. {{ site.Params.city }}.{{ end }}">
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  {{ if site.Params.drafts }}
+  <script>
+    try { var p = new URLSearchParams(location.search).get("p"); if (p) document.documentElement.dataset.palette = p; } catch (e) {}
+  </script>
+  {{ end }}
+</head>
+<body class="{{ block "bodyclass" . }}{{ end }}">
+  <a class="skip" href="#inhalt">Zum Inhalt</a>
+  {{ block "main" . }}{{ end }}
+  {{ if site.Params.drafts }}{{ partial "draftbar.html" . }}{{ end }}
+</body>
+</html>

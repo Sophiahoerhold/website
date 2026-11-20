@@ -1,0 +1,49 @@
+baseURL = "https://example.org/"
+locale = "de-DE"
+defaultContentLanguage = "de"
+title = "Sophia Hörhold"
+theme = "hoerhold"
+disableKinds = ["taxonomy", "RSS"]
+
+[taxonomies]
+  kategorie = "kategorien"
+
+# Kategorieseiten direkt unter /moderation/, /journalismus/ usw.
+[permalinks.term]
+  kategorien = "/:slug/"
+
+[params]
+  name = "Sophia Hörhold"
+  roles = ["Moderatorin", "Journalistin", "Host"]
+  city = "Leipzig & Berlin"
+  email = "hallo@sophiahoerhold.de"
+  booking = "Booking über Agentur Musterfrau, +49 30 000 000 00"
+  instagram = "https://instagram.com/"
+  linkedin = "https://linkedin.com/"
+  kontaktTitel = "Kontakt & Anfragen"
+  kontaktText = "Für Moderationen, Podien, Festivals und Formate.<br>Anfragen bitte mit Datum, Ort und Thema."
+  # Abschnitt "Demnächst" mit den Terminen aus data/termine.yaml anzeigen
+  showTermine = false
+  # Farbschema, siehe README (aktuell: tannetomate)
+  palette = "tannetomate"
+  # Startseiten-Layout: sendeplan | titelseite | buehne
+  homeLayout = "sendeplan"
+  # Zeigt die Leiste zum Umschalten der Farbschemata
+  drafts = false
+
+[menus]
+  [[menus.main]]
+    name = "Arbeiten"
+    url = "/#arbeiten"
+    weight = 1
+  [[menus.main]]
+    name = "Über mich"
+    url = "/#ueber"
+    weight = 2
+  [[menus.main]]
+    name = "Kontakt"
+    url = "/#kontakt"
+    weight = 4
+
+[markup.goldmark.renderer]
+  unsafe = true

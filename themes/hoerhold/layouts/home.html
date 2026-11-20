@@ -1,0 +1,2 @@
+{{ define "bodyclass" }}layout-{{ site.Params.homeLayout }}{{ end }}
+{{ define "main" }}{{ partial (printf "home/%s.html" site.Params.homeLayout) . }}{{ end }}
