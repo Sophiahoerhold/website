@@ -1,17 +1,17 @@
 ---
 title: Sophia Hörhold
-intro: Ich moderiere Gespräche, die sonst niemand führen will, und recherchiere die Geschichten, die dazwischen liegen.
+intro: HI! Ich bin Sophia. Ich erzähle gern Geschichten, bringe unterschiedliche Menschen zusammen und frage Sie nach ihrer Meinung und gebe mein Wissen weiter.
 portrait: /img/Testportrait.jpg
 fotocredit: Foto, Platzhalter Fotografin
 ueberschriften:
-  arbeiten: Auswahl der Arbeiten
+  arbeiten: Meine Arbeit
   termine: Demnächst
-  kunden: Gearbeitet für
-  stimmen: Stimmen
+  kunden: Ich arbeite für
+  stimmen: Das sagen Andere über mich
 ---
 
-Sophia Hörhold ist Journalistin und Moderatorin aus Leipzig. Sie hat an der Universität Leipzig Journalistik studiert und beim MDR volontiert. Heute moderiert sie Podien, Festivals und Fachtagungen, präsentiert ein Kulturmagazin im Fernsehen und arbeitet als Autorin für Hörfunk und Online.
+Ich bin Journalistin, Moderatorin und Bildungreferentin aus Berlin. Eigentlich habe ich mal Kulturwirtschaft und Romanistik studiert. Heute arbeite ich in verschiedenen Kontexten, immer zwischen Medien, Kultur und Bildung. Mal moderiere ich Panels oder Veranstaltungen, mal schreibe ich über ein Thema, über das ich gestolpert bin oder fasse in einem Podcast eine spannende Studie zusammen. Mal gebe ich mein Wissen in einem Workshop weiter.  
 
-Ihre Themen sind Stadt, Arbeit und Ostdeutschland nach 1990. Sie interessiert sich dafür, wie Menschen über das sprechen, was sie betrifft, und wie man ihnen dafür Raum gibt, ohne die Zügel aus der Hand zu geben.
+Privat begeistere ich mich für nerdiges Sprachwissen und queere Popkultur oder reise - wenn Zeit und Geld grade reichen – um die halbe Welt. PodienvFestivals oder Fachtagungen, präsentiert ein Kulturmagazin im Fernsehen und arbeitet als Autorin für Hörfunk und Online.Als freie Journalistin und Moderatorin beschäftigen mich vor allem soziale Gerechtigkeit, Vielfalt und Gleichberechtigung.  Ich setze mich gern für queere Themen und feministische Belange ein. 
 
-Sie moderiert auf Deutsch und Englisch.
+Ich moderiere auf Deutsch, Englisch, Französisch und Italienisch.
