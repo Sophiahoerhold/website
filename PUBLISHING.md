@@ -112,7 +112,7 @@ Recommended free editors:
 
 > **Don't use TextEdit** unless you first switch it to plain text (*Format → Make Plain Text*). Otherwise it may save formatting or "smart quotes" that break the files.
 
-To add images, copy them into `themes/hoerhold/static/img/` (or create a folder `static/img/` in the website folder) and reference them as `/img/filename.jpg`.
+To add images, copy them into the folder `static/img/` and reference them as `/img/filename.jpg`.
 
 ### 2. Commit (save a version)
 

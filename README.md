@@ -24,7 +24,7 @@ The homepage, from top to bottom:
 | Name in the top left and the big name below it | `hugo.toml` | `name` (each word becomes its own line in the big name) |
 | Menu (Arbeiten, Über mich, Kontakt) | `hugo.toml` | `[[menus.main]]` blocks |
 | **Running ticker bar** below the name | `hugo.toml` | `roles` (list) and `city` |
-| Portrait photo and photo credit | `content/_index.md` | `portrait`, `fotocredit` |
+| Portrait photo and photo credit | `content/_index.md` | `portrait`, `fotocredit` (image file in `static/img/`, see below) |
 | Large intro sentence next to the portrait | `content/_index.md` | `intro` |
 | Biography (two columns) | `content/_index.md` | the text below the closing `---` |
 | Section headings ("Auswahl der Arbeiten", "Gearbeitet für", ...) | `content/_index.md` | `ueberschriften` |
@@ -36,6 +36,7 @@ The homepage, from top to bottom:
 | Footer links | `content/impressum.md`, `content/datenschutz.md` | page text |
 | Category pages (/moderation/ etc.) | `content/kategorien/<name>/_index.md` | see below |
 | Color scheme | `hugo.toml` | `palette` |
+| Browser tab icon (favicon) | `static/favicon.svg` | see below |
 
 ### Front matter in a nutshell
 
@@ -62,6 +63,21 @@ city = "Leipzig & Berlin"
 ```
 
 Add or remove roles as you like. The same roles are also used in the browser tab title and the page description for search engines. For visitors who have reduced motion turned on in their system settings, the ticker stays still.
+
+## Changing the portrait and other images
+
+All images live in `static/img/`. Everything in `static/` is published as is, so `static/img/portrait.jpg` becomes `/img/portrait.jpg` on the website.
+
+To replace the portrait:
+
+1. Copy the photo into `static/img/`, e.g. `static/img/portrait.jpg`. Portrait format 4:5 works best (e.g. 1600 × 2000 px); other formats are cropped to fit.
+2. In `content/_index.md` change the line to `portrait: /img/portrait.jpg` and update `fotocredit`.
+
+The photo gets a color tint matching the color scheme automatically. The placeholder files (`portrait.svg`, `still-1.svg` … `still-6.svg`) can be deleted once nothing refers to them anymore.
+
+## The favicon
+
+The small icon in the browser tab shows the initials "SH" in the colors of "Tanne & Tomate". It is the file `static/favicon.svg`, a short text file. To change the colors, open it and replace the two color codes (`#1d4433` background, `#f3eee4` letters). To use a different icon, replace the file with another SVG of the same name.
 
 ## Adding a new work entry
 
@@ -178,7 +194,7 @@ The colors themselves are defined at the top of `themes/hoerhold/assets/css/main
 
 ## Before going live
 
-- [ ] Replace all placeholder texts, images (`static/img/` or `themes/hoerhold/static/img/`) and the e-mail address
+- [ ] Replace all placeholder texts, images (`static/img/`) and the e-mail address
 - [ ] Set the real domain as `baseURL` in `hugo.toml`
 - [ ] Fill in `content/impressum.md` and `content/datenschutz.md` with legally valid texts
 - [ ] Check that `drafts = false` is set
@@ -200,6 +216,8 @@ data/
   stimmen.yaml             quotes
   termine.yaml             upcoming dates
   paletten.yaml            color schemes for the comparison page
-static/                    your own images and files (create if needed)
+static/
+  favicon.svg              browser tab icon
+  img/                     portrait and work images
 themes/hoerhold/           layout, styles, fonts; no changes needed for content
 ```
