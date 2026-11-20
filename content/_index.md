@@ -1,7 +1,7 @@
 ---
 title: Sophia Hörhold
 intro: Ich moderiere Gespräche, die sonst niemand führen will, und recherchiere die Geschichten, die dazwischen liegen.
-portrait: /img/portrait.svg
+portrait: /img/Testportrait.jpeg
 fotocredit: Foto, Platzhalter Fotografin
 ueberschriften:
   arbeiten: Auswahl der Arbeiten
