@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "RSS"]
 [params]
   name = "Sophia Hörhold"
   roles = ["Moderatorin", "Journalistin", "Host"]
-  city = "Leipzig & Berlin"
+  city = "Berlin"
   email = "hallo@sophiahoerhold.de"
   booking = "Booking über Agentur Musterfrau, +49 30 000 000 00"
   instagram = "https://instagram.com/"
