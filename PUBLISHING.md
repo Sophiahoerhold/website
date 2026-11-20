@@ -168,7 +168,6 @@ In Netlify, open **Deploys**. The latest entry should say *Published*. If it say
 
 - **Front matter broken**: a missing `---`, or a value with a colon that isn't in quotes. Correct: `title: "Moderation: Podium"`.
 - **YAML indentation** in `data/*.yaml`: entries must start with `- ` and the lines under them must be indented with exactly two spaces. Don't use tabs.
-- **Date format** in `data/termine.yaml` must be `2027-06-12`.
 
 To undo the last change: in GitHub Desktop, go to **History**, right-click the last commit → **Revert changes in commit**, then **Push origin**.
 

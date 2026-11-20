@@ -22,13 +22,6 @@
     {{ partial "programm.html" $arbeiten }}
   </section>
 
-  {{ if site.Params.showTermine }}
-  <section class="wrap block split" id="termine">
-    <h2 class="label">{{ .Params.ueberschriften.termine }}</h2>
-    {{ partial "termine.html" . }}
-  </section>
-  {{ end }}
-
   <section class="wrap block split">
     <h2 class="label">{{ .Params.ueberschriften.kunden }}</h2>
     {{ partial "kunden.html" . }}

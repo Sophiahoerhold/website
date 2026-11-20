@@ -188,17 +188,6 @@ h1, h2, h3 { margin: 0; font-weight: inherit; }
 @keyframes ticker { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } html { scroll-behavior: auto; } }
 
-/* Termine */
-.termine { list-style: none; margin: 0; padding: 0; }
-.termine li { display: grid; grid-template-columns: 5.5em 1fr auto; gap: 8px 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid color-mix(in srgb, var(--line) 25%, transparent); }
-.termine time { font-family: var(--sans); font-variant-numeric: tabular-nums; display: flex; flex-direction: column; }
-.termine .tag { font-weight: 800; font-size: 34px; line-height: .9; font-stretch: 75%; }
-.termine .monat { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: 4px; }
-.termine strong { display: block; font-weight: 500; }
-.termine div span { color: var(--muted); font-size: .88em; }
-.termine em { font: 500 12px/1.2 var(--sans); text-transform: uppercase; letter-spacing: .06em; font-style: normal; }
-@media (max-width: 600px) { .termine li { grid-template-columns: 4.5em 1fr; } .termine em { grid-column: 2; } }
-
 /* Auftraggeber als Fließtext */
 .kunden { font-size: clamp(22px, 2vw + 10px, 38px); line-height: 1.25; margin: 0; }
 .kunden i { color: var(--muted); font-style: normal; }
@@ -256,12 +245,10 @@ h1, h2, h3 { margin: 0; font-weight: inherit; }
 .p-ziel { font-family: var(--sans); font-size: .55em; vertical-align: .35em; margin-left: .3em; color: var(--muted); }
 .p-row:hover { color: inherit; }
 .p-row:hover .p-ziel { color: var(--accent); }
-.p-bild { position: absolute; right: 0; top: 50%; width: 260px; transform: translateY(-50%); opacity: 0; pointer-events: none; transition: opacity .15s; z-index: 2; }
-@media (hover: hover) and (min-width: 900px) { .p-row:hover .p-bild { opacity: 1; } .p-row:hover .p-titel { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; } }
+@media (hover: hover) and (min-width: 900px) { .p-row:hover .p-titel { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; } }
 @media (max-width: 899px) {
   .p-row { grid-template-columns: 3.4em 1fr; }
   .p-sender, .p-format, .p-rolle { grid-column: 2; }
-  .p-bild { position: static; transform: none; opacity: 1; width: auto; grid-column: 2; margin-top: 10px; }
 }
 
 /* ===== Layout B: Titelseite ===== */
@@ -282,9 +269,6 @@ h1, h2, h3 { margin: 0; font-weight: inherit; }
 .ts-side .label { margin-bottom: 16px; }
 .ts-side .label + * { margin-bottom: 40px; }
 .ts-side .kunden { font-size: 20px; }
-.ts-side .termine li { grid-template-columns: 3.6em 1fr; }
-.ts-side .termine em { grid-column: 2; }
-.ts-side .termine .tag { font-size: 26px; }
 .ts-ressort { padding-top: clamp(48px, 6vw, 88px); clear: both; }
 .ts-ressort-title { font: 800 clamp(30px, 4vw, 54px)/1 var(--sans); font-stretch: 70%; text-transform: uppercase; border-top: 3px double var(--line); padding-top: 12px; margin-bottom: 28px; }
 .ts-teaser-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px 0; }

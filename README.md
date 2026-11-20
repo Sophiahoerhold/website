@@ -29,7 +29,6 @@ The homepage, from top to bottom:
 | Biography (two columns) | `content/_index.md` | the text below the closing `---` |
 | Section headings ("Auswahl der Arbeiten", "Gearbeitet für", ...) | `content/_index.md` | `ueberschriften` |
 | List of works ("Auswahl der Arbeiten") | `content/arbeiten/*.md` | one file per entry, see below |
-| Upcoming dates ("Demnächst"), **hidden by default** | `data/termine.yaml` | see below |
 | Clients ("Gearbeitet für") | `data/kunden.yaml` | one name per line |
 | Quotes ("Stimmen") | `data/stimmen.yaml` | `text`, `wer`, `funktion` |
 | Contact block: heading, e-mail, text, booking, social links | `hugo.toml` | `kontaktTitel`, `email`, `kontaktText`, `booking`, `instagram`, `linkedin` |
@@ -90,7 +89,6 @@ sender: WDR 5
 jahr: 2026
 format: Live-Talk, 60 min
 rolle: Moderation
-bild: /img/tagesgespraech.jpg
 kategorien: [Moderation]
 link: https://www1.wdr.de/
 weight: 9
@@ -106,36 +104,11 @@ Short description. Currently only used internally, not shown in the list.
 | `jahr` | Year, shown in the first column |
 | `format` | Format, e.g. "Podium" or "Feature, 54 min" |
 | `rolle` | Her role, e.g. "Moderation" or "Autorin, Host" |
-| `bild` | Still image that appears when hovering over the row (on phones it is always shown). Put the file into `static/img/` and write `/img/filename.jpg`. 16:9 works best. |
 | `kategorien` | Exactly one category in square brackets: `[Moderation]`, `[Journalismus]` or `[Bildungsarbeit]` |
 | `link` | *Optional.* If set, clicking the row opens this external page in a new tab (marked with ↗). If omitted, the row leads to the entry's category page (marked with →). |
 | `weight` | Order in the list. Smaller numbers come first. |
 
-Images get a color tint matching the color scheme automatically, so any photo works.
-
 To remove an entry, delete its file.
-
-## Adding new dates
-
-The "Demnächst" section (upcoming events) is currently **switched off**. To use it:
-
-1. In `hugo.toml` set `showTermine = true`.
-2. Optionally add a menu entry in `hugo.toml`:
-   ```toml
-   [[menus.main]]
-     name = "Termine"
-     url = "/#termine"
-     weight = 3
-   ```
-3. Add dates to `data/termine.yaml`:
-   ```yaml
-   - datum: 2027-06-12
-     titel: Podiumsgespräch „Stadt für alle“
-     ort: Schauspiel Leipzig
-     rolle: Moderation
-   ```
-
-The date must be written as `YYYY-MM-DD`. Dates are sorted automatically. Past dates are **not** removed automatically, so delete them from the file once they are over.
 
 ## Adding a new category page
 
@@ -214,7 +187,6 @@ content/
 data/
   kunden.yaml              clients
   stimmen.yaml             quotes
-  termine.yaml             upcoming dates
   paletten.yaml            color schemes for the comparison page
 static/
   favicon.svg              browser tab icon

@@ -22,9 +22,7 @@
       {{ partial "portrait.html" (dict "page" . "class" "ts-portrait") }}
       <div class="prose columns">{{ .Content }}</div>
     </article>
-    <aside class="ts-side" id="termine">
-      <h2 class="label">Termine</h2>
-      {{ partial "termine.html" . }}
+    <aside class="ts-side">
       <h2 class="label">Gearbeitet für</h2>
       {{ partial "kunden.html" . }}
     </aside>

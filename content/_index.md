@@ -5,7 +5,6 @@ portrait: /img/Testportrait.jpg
 fotocredit: Foto, Platzhalter Fotografin
 ueberschriften:
   arbeiten: Meine Arbeit
-  termine: Demnächst
   kunden: Ich arbeite für
   stimmen: Das sagen Andere über mich
 ---
